@@ -1,61 +1,63 @@
-# Open Transport
+# User CRUD Stack (React + Tailwind + Express + MongoDB)
 
-Application web pour covoiturage. 
+This repository contains a full-stack TypeScript project for managing users with full CRUD capabilities. The stack includes:
 
-## Getting Started
+- **Client**: React + Vite + Tailwind CSS
+- **Server**: Node.js + Express + Mongoose
+- **Database**: MongoDB
 
-Ces instructions permettent d'executer une copie du projet en local sur votre poste de travail pour le développement et les tests. Référez-vous à la section "Déploiement" pour les étapes à suivre pour déployer le projet en production.
-
-### Pré-requis
-
-Pour executer en local le projet Open Transport, vous devez au préalable installer :
+## Project structure
 
 ```
-A définir
-
+.
+├── client
+└── server
 ```
 
-### Installation
+## Prerequisites
 
-Voici les étapes à suivre pour avoir un environnement de développement et de test opérationnel :
+- Node.js 18+
+- MongoDB instance (local or hosted)
 
+## Getting started
 
-```
-A définir
-```
+### 1) Server
 
-
-
-## Executer les tests
-
-```
-A définir : expliquer comment executer les tests
-```
-
-
-## Deployment
-
-Voici les étapes à suivre pour déployer en production :
-
-```
-A définir
+```bash
+cd server
+cp .env.example .env
+npm install
+npm run dev
 ```
 
-## Technologies :
+The API runs on `http://localhost:4000` by default.
 
-* HTML5/CSS3
-* [Boostrap](https://getbootstrap.com/)
+### 2) Client
 
-## Contribution
+```bash
+cd client
+cp .env.example .env
+npm install
+npm run dev
+```
 
-Merci de lire les fichiers :
-* [CONTRIBUTING.md](https://github.com/OpenClassrooms-Student-Center/7688581-Expert-Git-GitHub/blob/main/CONTRIBUTING.md)
-* [CODE_OF_CONDUCT.md](https://github.com/OpenClassrooms-Student-Center/7688581-Expert-Git-GitHub/blob/main/CONTRIBUTING.md) 
+The UI runs on `http://localhost:5173` by default and connects to the API via `VITE_API_URL`.
 
-## Auteurs
+## API endpoints
 
-* **Non spécifié**
+| Method | Route | Description |
+| ------ | ----- | ----------- |
+| GET | `/api/users` | List users |
+| GET | `/api/users/:id` | Fetch a single user |
+| POST | `/api/users` | Create a user |
+| PUT | `/api/users/:id` | Update a user |
+| DELETE | `/api/users/:id` | Delete a user |
+
+## Notes
+
+- Ensure `MONGO_URI` is set in `server/.env` before starting the server.
+- Emails must be unique.
 
 ## License
 
-Ce projet est sous la licence GNU GPL V3 - voir le fichier [LICENSE](LICENSE) pour plus de détails
+This project is licensed under the GNU GPL v3. See [LICENSE](LICENSE) for details.
